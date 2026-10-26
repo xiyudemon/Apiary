@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apiary 蜂巢 · 任务提交</title>
+  <script src="/submit.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Apiary 蜂巢 · 任务提交</h1>
+    <p>使用管理员在“用户管理”中创建的客户端账号验证身份。任务将提交到桌面端的同一任务池。</p>
+    <p>仅用于可信局域网，当前连接为 HTTP，请勿使用其他服务的密码。</p>
+    <form id="task-form">
+      <p><label>账号 <input name="username" autocomplete="username" required maxlength="128"></label></p>
+      <p><label>密码 <input name="password" type="password" autocomplete="current-password" required maxlength="256"></label></p>
+      <p><label>任务描述（支持 A–E 点、坐标、运输起终点及机数）<br>
+        <textarea name="task" rows="8" cols="60" maxlength="8000" required placeholder="例如：派两架无人机从 C 点运输物资到 D 点"></textarea>
+      </label></p>
+      <button type="submit">验证并提交任务</button>
+    </form>
+    <p id="status" role="status" aria-live="polite"></p>
+    <pre id="result"></pre>
+  </main>
+</body>
+</html>
